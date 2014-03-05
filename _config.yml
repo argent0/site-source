@@ -1,0 +1,5 @@
+name: Aner's blog
+markdown: redcarpet
+pygments: true
+destination: ../argent0.github.io
+url: http://argent0.github.io
