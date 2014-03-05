@@ -25,9 +25,9 @@ h1, h2, h3, h4, h5, h6 {
 h1 { margin-bottom: 1em; }
 p { margin: 1em 0; }
 
-a         { color: #00a; }
+a         { color: #0a5; }
 a:hover   { color: #000; }
-a:visited { color: #a0a; }
+a:visited { color: #0a0; }
 
 /*****************************************************************************/
 /*
@@ -79,7 +79,8 @@ a:visited { color: #a0a; }
 }
 
 .title a {
-  color: #a00;
+  /*color: #a00;*/
+  color: #0a5;
 }
 
 .title a:hover {
@@ -162,4 +163,8 @@ a:visited { color: #a0a; }
 
 .post pre.terminal code {
   background-color: #333;
+}
+
+.post h1 {
+	font-size: 162%;
 }
