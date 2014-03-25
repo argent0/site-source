@@ -118,7 +118,7 @@ for line in sys.stdin:
 			print key
 {% endhighlight %}
 
-Using this script it is easy to obtain the words you have not used yet by:
+Using this script it is easy to get the words you have not used yet by:
 
 {% highlight bash %}
 python2 filterWords.py your_diary.txt 0 < your_wordlist
