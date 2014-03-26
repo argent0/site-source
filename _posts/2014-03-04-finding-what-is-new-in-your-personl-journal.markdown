@@ -93,7 +93,7 @@ Now, to find the words I haven't used before,  I wrote a little python script
 `filterWords.py` . Given your corpus, the *wordlist* and a number `N`, the
 script will return the words in *wrodlist* that were used `N` times in the corpus.
 
-{% highlight python linenos=table %}
+{% highlight python %}
 """ 
     USAGE: filterWords.py <diaray file> <frequency filter>
     Given a list of words from stdin, prints the ones that apear <frequency
