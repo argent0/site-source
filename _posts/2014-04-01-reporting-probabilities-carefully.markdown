@@ -29,7 +29,7 @@ $$ p = \frac{1}{2} $$
 That would mean that if you want to take $\epsilon$ risk then you should send
 about $7$ emails.
 
-But what if you where lucky to get one out of two. If the real probability to have
+But what if you where lucky to get one out of two? If the real probability to have
 a replay is $q$, then the probability of one reply in two tries $P(N=1)$ is:
 
 $$ P(N=1) = {1 \choose 2}q(1-q) $$
@@ -55,7 +55,7 @@ $$ p^2-p+\frac{\eta}{2} < 0 $$
 
 For the case of $\eta = 0.01$, $p = 0.005$.
 
-In other words if you want to overestimate $p$ only $1$ every $100$, you should
+In other words if you want to overestimate $p$ only $1$ every $100$ times, you should
 say that it's value is $p = 0.005$. Given your experience of one reply in two
 emails. This value of $p$ implies that you should send about $920$ emails to
 recieve at least one answer $99$ of $100$ times you send a bunch.
