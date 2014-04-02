@@ -56,7 +56,7 @@ $$ p^2-p+\frac{\eta}{2} < 0 $$
 For the case of $\eta = 0.01$, $p = 0.005$.
 
 In other words if you want to overestimate $p$ only $1$ every $100$ times, you should
-say that it's value is $p = 0.005$. Given your experience of one reply in two
+say that its value is $p = 0.005$. Given your experience of one reply in two
 emails. This value of $p$ implies that you should send about $920$ emails to
 recieve at least one answer $99$ of $100$ times you send a bunch.
 
