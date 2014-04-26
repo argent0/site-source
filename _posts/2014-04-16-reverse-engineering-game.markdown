@@ -4,28 +4,7 @@ title: "Reverse Engineering game"
 categories: "Web development"
 ---
 
-<!--
-
-POST OBJECTIVE: I want to share my experience reading the book and writing this
-game
-
-* I started with a unclear idea: I wanted a game about reverse engineering.
-* I built the prototype of the led board
-* I played with it
-* I picked a way to code the inner workings as population migrations
-* I Built the current code
-	+ It started from javascript
-	+ Then moved to coffeescript
-	+ Easier to work with arrays
-		
-
-What would I do different now:
-
-* I would think beforehand of the requirements
-	- difficult to cheat
-* Design the code better. Separate the mechanics from the display
-* Reorganize the build process
--->
+I wrote a Reverse Engineering game as an exercise to write better code.
 
 As I started reading the book  Code Complete 2, I thought I could as well
 practice by writing some code.
@@ -110,3 +89,26 @@ complexity that I have to handle when writing these operations. They call this
 {% highlight coffeescript %}
 cubes = (math.cube num for num in list)
 {% endhighlight %}
+
+<!--
+
+POST OBJECTIVE: I want to share my experience reading the book and writing this
+game
+
+* I started with a unclear idea: I wanted a game about reverse engineering.
+* I built the prototype of the led board
+* I played with it
+* I picked a way to code the inner workings as population migrations
+* I Built the current code
+	+ It started from javascript
+	+ Then moved to coffeescript
+	+ Easier to work with arrays
+		
+
+What would I do different now:
+
+* I would think beforehand of the requirements
+	- difficult to cheat
+* Design the code better. Separate the mechanics from the display
+* Reorganize the build process
+-->

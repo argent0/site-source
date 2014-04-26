@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Finding what is new in your personal journal</title>
+<meta name="viewport" content="width=device-width">
+
+<!-- syntax highlighting CSS -->
+<link rel="stylesheet" href="/css/syntax.css">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/css/main.css">
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	 <![endif]-->
+
+</head>
+<body>
+<!-- Fixed navbar -->
+<div class="navbar navbar-default navbar-static-top" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="http://argent0.github.io">Aner's blog</a>
+		</div>
+		<div class="collapse navbar-collapse" id="blog-navbar">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#">About</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<!--
+		 <div class="header">
+			 <h1 class="title"><a href="/">Aner's blog</a></h1>
+			 <a class="extra" href="/">home</a>
+		 </div>
+		-->
+
+	<div class="blog-post">
+	<p class="meta">04 Mar 2014</p>
+	<h1>Finding what is new in your personal journal</h1>
+	<p>I&#39;ve keep a log of my everyday activities since 2011. The goal is to
+allow me to look back into the past having a clear perspective of myself at that
+particular moment. But to accomplish this clear perspective, the text on the
+journal should be clear too.</p>
+
+<p>Here are some of the ways I&#39;m using the <a href="http://www.vim.org/">VIM</a> text editor
+to make writing good text a little easier.</p>
+
+<h2>Using a spell checker</h2>
+
+<p>The first one is obvious: I need spell checking. This command switches on spell
+checking on the current buffer:</p>
+
+<div class="highlight"><pre><code class="vim"><span class="p">:</span><span class="k">setlocal</span> <span class="k">spell</span>
+</code></pre></div>
+
+<p>This is not only helpful if you want to read the text later, but also if
+you want to do some kind automatic analysis like counting frequency of words.</p>
+
+<h2>Using descriptive words</h2>
+
+<p>Using words from the dictionary stills allows you to say things like: &quot;I did
+something new&quot;. The problem with this sentence, which is an extreme example, is
+that it leaves many unanswered questions. Like: &quot;What was done?&quot; and &quot;Why is it
+new?&quot;.</p>
+
+<p>Of course you can answer these questions later in the paragraph, but only if you
+are aware that you left them unanswered in the first place.</p>
+
+<p>Vim can remind you when you are using such words by highlighting them. For
+example in:</p>
+
+<pre class="terminal">
+<code>I did <span style="background-color:blue;">something new</span>.</code>
+</pre>
+
+<p>So that you can clarify what you meant:</p>
+
+<pre class="terminal">
+<code>I did <span style="background-color:blue;">something new</span>. What I did was...</code>
+</pre>
+
+<p>You only need to source a <em>vim</em> script where you basically tell <em>vim</em> which are the
+words you want to be aware of:</p>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="vim">1
+2
+3</code></pre></div></td><td class="code"><div class="highlight"><pre><span class="k">syn</span> case ignore
+<span class="c">&quot; Some words that might be imprecise </span>
+<span class="k">syn</span> keyword WarningMsg something <span class="k">new</span>
+</pre></div>
+</td></tr></table>
+
+<h2>Finding new words</h2>
+
+<p>A new feature I&#39;m trying now is the ability to highlight words I haven&#39;t use
+before. These words might appear when I&#39;m writing about something I haven&#39;t
+written before and I would like to be especially clear about.</p>
+
+<p>Here&#39;s an example how this works. Notice how new words turn green as you type
+them.</p>
+
+<p><img src="http://argent0.github.io/media/img/new_words_sample_session.gif" alt="sample session" title="Sample session"></p>
+
+<p>The process consist basically of:</p>
+
+<ul>
+<li>Knowing which words I have already used</li>
+<li>Knowing which words I have available in my language</li>
+<li>Highlight the words that I have available and I haven&#39;t use already</li>
+</ul>
+
+<p>To know what words I have used already I&#39;m using python&#39;s <a href="http://www.nltk.org/"><em>NLTK</em></a>.
+With <em>NLTK</em>, it&#39;s easy to load your corpus of text and calculate the frequency
+of appearance for each word.</p>
+
+<div class="highlight"><pre><code class="python"><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="n">my_corpus</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">corpus</span><span class="o">.</span><span class="n">reader</span><span class="o">.</span><span class="n">PlaintextCorpusReader</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="p">,</span><span class="s">&#39;diary.txt&#39;</span><span class="p">)</span>
+<span class="n">fdist</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">FreqDist</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">my_corpus</span><span class="o">.</span><span class="n">words</span><span class="p">())</span>
+</code></pre></div>
+
+<p>Now <code>fdist[&quot;word&quot;]</code> contains the number of times &quot;word&quot; is contained in the
+file <code>diaray.txt</code></p>
+
+<p>To obtain a list of available words in a language, I searched for <em>wordlist</em>
+and found one <a href="http://www.google.com/search?q=english+wordlist" title="Google Search">here</a>.</p>
+
+<p>Now, to find the words I haven&#39;t used before,  I wrote a little python script
+<code>filterWords.py</code> . Given your corpus, the <em>wordlist</em> and a number <code>N</code>, the
+script will return the words in <em>wrodlist</em> that were used <code>N</code> times in the corpus.</p>
+
+<div class="highlight"><pre><code class="python"><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    USAGE: filterWords.py &lt;diaray file&gt; &lt;frequency filter&gt;</span>
+<span class="sd">    Given a list of words from stdin, prints the ones that apear &lt;frequency</span>
+<span class="sd">    filter&gt; times in the &lt;diaray file&gt; corpus.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">sys</span>                      
+<span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s">&quot;USAGE: &quot;</span><span class="o">+</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="s">&quot; &lt;diaray file&gt; &lt;frequency filter&gt;&quot;</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+<span class="n">diaryFile</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">freq_filter</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="kn">import</span> <span class="nn">nltk</span>
+<span class="c"># You may want to use a custom word tokenizer</span>
+<span class="n">my_corpus</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">corpus</span><span class="o">.</span><span class="n">reader</span><span class="o">.</span><span class="n">PlaintextCorpusReader</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="p">,</span><span class="n">diaryFile</span><span class="p">)</span>
+<span class="c"># calculating the frequency distribution of the words</span>
+<span class="c"># You could save this distribution using pickle</span>
+<span class="c"># https://wiki.python.org/moin/UsingPickle</span>
+<span class="n">fdist</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">FreqDist</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">my_corpus</span><span class="o">.</span><span class="n">words</span><span class="p">())</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="p">:</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> 
+    <span class="k">if</span> <span class="p">(</span><span class="n">fdist</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">==</span><span class="n">freq_filter</span><span class="p">):</span>
+            <span class="k">print</span> <span class="n">key</span>
+</code></pre></div>
+
+<p>Using this script it is easy to get the words you have not used yet by:</p>
+
+<div class="highlight"><pre><code class="bash">python2 filterWords.py your_diary.txt 0 &lt; your_wordlist
+</code></pre></div>
+
+<p>Finally, to highlight this words in <em>vim</em> I generate a syntax file just before
+launching <em>vim</em>:</p>
+
+<div class="highlight"><pre><code class="bash"><span class="nv">vim_script_file</span><span class="o">=</span><span class="s2">&quot;/tmp/uniq.vim&quot;</span>
+<span class="c">#Ignore case</span>
+<span class="nb">echo </span>syn <span class="k">case </span>ignore &gt; <span class="s2">&quot;$vim_script_file&quot;</span> 
+
+<span class="c"># Highlight new words (never used before)</span>
+<span class="nb">echo </span>syn keyword Type<span class="se">\</span>
+        <span class="k">$(</span>cat res/en.txt <span class="p">|</span><span class="se">\</span>
+            python2 filterWords.py <span class="s2">&quot;$diary_with_no_comments&quot;</span> 0 <span class="p">|</span><span class="se">\</span>
+        tr <span class="s1">&#39;\n&#39;</span> <span class="s1">&#39; &#39;</span><span class="k">)</span> &gt;&gt; <span class="s2">&quot;$vim_script_file&quot;</span>
+
+<span class="c"># Correct posible errors</span>
+sed -i -e <span class="s1">&#39;/Type$/d&#39;</span> <span class="s2">&quot;$vim_script_file&quot;</span>
+
+<span class="c"># Source syntax file before launching vim</span>
+vim -S <span class="s2">&quot;$vim_script_file&quot;</span> diary.txt
+</code></pre></div>
+
+</div>
+
+</div>
+	<div class="navbar navbar-default navbar-static-bottom">
+		<div class="container">
+			<div class="contact">
+				<p>
+				Copyright 2014, Aner Oscar Lucero<br />
+				</p>
+			</div>
+			<div class="contact">
+				<p>
+				<a href="https://github.com/argent0" target="_blank">github.com/argent0</a><br />
+				</p>
+			</div>
+		</div>
+	</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
