@@ -25,7 +25,8 @@ working:
 
 If you want to try the [unpackaged
 extension](https://developer.chrome.com/extensions/getstarted) you can go grab
-it in its [github repository](https://github.com/argent0/hn-warning-words).
+it in its [github repository](https://github.com/argent0/hn-warning-words). Here
+are [instructions](#instructions) to install it in your chrome browser.
 
 I also wrote this extension as an exercise to apply what I'm reading in Code
 Complete 2. So here are some technical considerations about the tools used.
@@ -63,6 +64,15 @@ accessed by the *highlight-code* the separation of functionality was necessary.
 The final surprise came when I found that the local storage works
 asynchronously. I should have prototyped that too before starting to join the
 different pieces together. Fortunately this wasn't an insurmountable difficulty.
+
+## <a name="instructions"></a>How to install it
+
+* Download and extract
+[this](https://github.com/argent0/hn-warning-words/archive/master.zip) ZIP file.
+
+* Go to the chrome menu Tools/Extensions, then click on "Load unpacked
+  extension". Select the folder were the contents of the zip files where
+  extracted to.
 
 <!--
 
