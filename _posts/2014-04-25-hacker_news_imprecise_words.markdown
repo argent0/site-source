@@ -70,9 +70,14 @@ different pieces together. Fortunately this wasn't an insurmountable difficulty.
 * Download and extract
 [this](https://github.com/argent0/hn-warning-words/archive/master.zip) ZIP file.
 
-* Go to the chrome menu Tools/Extensions, then click on "Load unpacked
-  extension". Select the folder were the contents of the zip files where
-  extracted to.
+* Go to the chrome menu Tools/Extensions
+
+* Make sure [development mode](https://developer.chrome.com/extensions/faq#faq-dev-01)
+  is enabled, by checking the checkbox to the top right.
+
+* Click on "Load unpacked extension". 
+
+* Select the folder *hn-warning-words-master* which was extracted from the zip file.
 
 <!--
 
