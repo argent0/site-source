@@ -9,7 +9,7 @@ comment pages. Here is how and why.
 
 There are certain words which can be used imprecisely. Let's take for example
 the word *all* in the phrase "All is X". If you can find a single instance of
-something that is not X, the should not have used the word all. Another example
+something that is not X, then you should not have used the word all. Another example
 could be the word *easy*. Easy to whom?, compared with what?.
 
 What I suggest is not avoiding these words completely, but rather to make sure
