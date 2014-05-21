@@ -1,5 +1,6 @@
 module CustomHelpers
 	@@base_title = "Aner's Site"
+	@@github_url = "https://github.com/argent0"
 
    def full_title(page_title=nil)
 		if page_title.nil?
@@ -11,5 +12,9 @@ module CustomHelpers
 
 	def copyright_str
 		"Copyright #{Time.now.year} Aner Lucero"
+	end
+
+	def github_link
+		link_to 'Github', @@github_url
 	end
 end

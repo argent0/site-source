@@ -15,7 +15,11 @@
   
   <body class="<%= page_classes %>">
   <%= partial "partials/navbar" %>
+  <div id="wrapper">
+  <div id="content" class="container-fluid">
     <%= yield %>
+  </div>
+  </div>
   <%= partial "partials/footer" %>
   </body>
 </html>

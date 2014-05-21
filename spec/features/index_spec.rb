@@ -11,5 +11,6 @@ describe "index", :type => :feature do
 	describe "has a footer" do
 		it { should have_selector(:xpath, '//footer') }
 		it { should have_selector(:xpath, '//footer', text: copyright_str_test) }
+		#it { should have_selector(:xpath, '//foter/ul/li
 	end
 end
