@@ -3,6 +3,7 @@
 source 'http://rubygems.org'
 
 gem "middleman", '3.3.2'
+gem 'jquery-middleman', '3.0.4'
 gem "bootstrap-sass", '3.1.1.1', require: false
 
 # Live-reloading plugin

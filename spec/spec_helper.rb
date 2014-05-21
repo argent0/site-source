@@ -7,3 +7,7 @@ Capybara.app = Middleman::Application.server.inst do
 	  set :environment, :development
 	  set :show_exceptions, false
 end
+
+RSpec.configure do | config |
+	config.include CustomHelpers, :type => :feature
+end

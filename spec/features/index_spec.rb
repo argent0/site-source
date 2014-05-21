@@ -1,18 +1,15 @@
 require "spec_helper"
 
 describe "index", :type => :feature do
-	before do
-		visit "/"
-	end
+	let(:base_title_test) { full_title }
+	let(:copyright_str_test) { copyright_str }
+	before { visit "/" }
+	subject { page }
 
-	it "has the correct title header" do
-		page.should have_selector "h1"
-		within "h1" do
-			page.should have_content /Middleman is Watching/i
-		end
-	end
+	it { should have_title base_title_test }
 
-	it "has a paragraph in there too" do
-		page.should have_selector "p.doc"
+	describe "has a footer" do
+		it { should have_selector(:xpath, '//footer') }
+		it { should have_selector(:xpath, '//footer', text: copyright_str_test) }
 	end
 end

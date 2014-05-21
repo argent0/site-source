@@ -41,11 +41,12 @@ configure :development do
 end
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+
+# Global configuration
+set :base_title, "Aner's Site"
+
+require "custom_helpers"
+helpers CustomHelpers
 
 set :css_dir, 'stylesheets'
 
