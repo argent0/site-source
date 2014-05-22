@@ -68,3 +68,49 @@ footer #as-copyright {
 	color: $text-muted;
 	@include footer-element;
 }
+
+/* Homepage */
+
+.show-case {
+	img {
+		width: 200px;
+		height: 166;
+	}
+
+	button {
+		text-transform: capitalize;
+	}
+
+	p {
+		text-transform: capitalize;
+	}
+}
+
+.extra-content {
+	padding-top: 50px;
+}
+
+.row-first {
+	-webkit-box-shadow: 1px 1px 0px 1px $box-shadow-color;
+	box-shadow: 1px 1px 1px 1px $box-shadow-color;
+
+	margin: 20px;
+	padding: 30px;
+}
+
+@mixin showcase {
+	padding-bottom: 20px;
+	padding: 10px;
+	border-radius: $border-radius-large;
+}
+
+.showcase-primary {
+	background-color: $brand-success;
+	@include showcase;
+}
+
+.showcase-secondary {
+	background-color: $brand-info;
+	float: right;
+	@include showcase;
+}

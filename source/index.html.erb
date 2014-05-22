@@ -1,6 +1,29 @@
-<div class="welcome">
-	<h1><%= lorem.words 3 %></h1>
-	 <% 10.times do |num| %>
-		 <p><%= lorem.paragraph %></p>
-	 <% end %>
-</div><!-- .welcome -->
+<div class="row row-first">
+	<div class="col-md-12">
+		<div class="row">
+
+				<%= partial("partials/showcase", :locals => {
+				:class_str => "col-md-5 showcase-primary",
+				:title => lorem.word,
+				:img_src => lorem.image('300x200', :background_color =>'333', :color => 'fff'),
+				:text => lorem.words(20),
+				:btn_text => lorem.word}) %>
+
+				<%= partial("partials/showcase", :locals => {
+				:class_str => "col-md-5 showcase-secondary",
+				:title => lorem.word,
+				:img_src => lorem.image('300x200', :background_color =>'333', :color => 'fff'),
+				:text => lorem.words(20),
+				:btn_text => lorem.word}) %>
+
+		</div>
+	</div>
+</div>
+<div class="row extra-content">
+	<div class="col-md-12">
+		<h1> <%= lorem.words 2 %> </h1>
+		<% 1.times do |num| %>
+			<p> <%= lorem.words 20 %> </p>
+		<% end %>
+	</div>
+</div>
