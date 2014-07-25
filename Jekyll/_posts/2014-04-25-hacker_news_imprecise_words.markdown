@@ -4,11 +4,11 @@ title: "Imprecise Words"
 categories: "web development linguistics"
 ---
 
-I wrote a *Google Chrome* extension to highlight *imprecise* words in HN's
+I wrote a **Google Chrome** extension to highlight imprecise words in HN's
 comment pages. Here is how and why.
 
 There are certain words which can be used imprecisely. Let's take for example
-the word *all* in the phrase "All is X". If you can find a single instance of
+the word "all" in the phrase "All is X". If you can find a single instance of
 something that is not X, then you should not have used the word all. Another example
 could be the word *easy*. Easy to whom?, compared with what?.
 
