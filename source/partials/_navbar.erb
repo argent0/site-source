@@ -8,12 +8,12 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#"><%= full_title %></a>
+			<a class="navbar-brand" href="/"><%= full_title %></a>
 		</div> <!-- navbar-header -->
 		<div id="as-navbar-collapse" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="#"><%= lorem.word %></a></li>
-				<li><a href="#"><%= lorem.word %></a></li>
+				<%= navbar_link 'Articles', '/articles/articles.html' %>
+				<%= navbar_link 'About', '/about/about.html' %>
 			</ul>
 		</div>
 	</div>

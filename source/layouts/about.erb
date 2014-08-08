@@ -1,15 +1,10 @@
+<% wrap_layout :layout do %>
 <div class="row">
 	<div class="col-sm-7 col-sm-push-4">
-		<h2>Aner's site</h2>
-
-		<p>I'm have a Ms in Physics. I use linux.</p>
-
-		<p> I have work experience in develping
-		recommendation systems and machine learning.</p>
-
-		<p>I use this site to post
-		<%= link_to "Articles" , "articles/articles.html" %></p>
-
+		<h2>About</h2>
+		<article>
+			<%= yield %>
+		</article>
 	</div>
 	<div class="col-sm-3 col-sm-pull-7">
 		<img src="/images/aner.png"
@@ -18,3 +13,4 @@
 		alt="Aner's image" class="visible-xs visible-sm">
 	</div>
 </div>
+<% end %>
