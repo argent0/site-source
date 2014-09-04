@@ -5,11 +5,15 @@ title: "About"
 
 ### Work Experience
 
-*Dridco*: Researcher. Recommendation Systems. Development, debugging, performance, administration, monitoring, and delivery of recommendations.
+*Dridco*: Researcher. Recommendation Systems. Development, debugging, performance,
+administration, monitoring, and delivery of recommendations.
 
 Mainly collaborative filters, item based recommendations and user based recommendations.
 
-Some tools: Web services (perl, java, tomcat), hadoop, java, map-reduce (java or streaming). MongoDB, SQL, bash, HTML, javascript, web-scraping.
+Some tools: Web services (perl, java, tomcat), hadoop, java, map-reduce (java or streaming).
+MongoDB, SQL, bash, HTML, javascript, web-scraping.
+
+Maintenance and refactoring of legacy code.
 
 From 2011 to 2014
 
