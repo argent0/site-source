@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="col-sm-7 col-sm-push-4">
+	<div class="col-sm-7 col-sm-push-4 home-content">
 		<h2>Aner's site</h2>
 
 		<p>I'm have a Ms in Physics. I use linux.</p>
@@ -9,6 +9,20 @@
 
 		<p>I use this site to post
 		<%= link_to "Articles" , "articles/articles.html" %></p>
+
+		<div class="row home-show-case">
+			<div class="col-sm-12">
+				<strong>I've made an HTML5 game!</strong>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<% link_to 'http://anerman.com.ar/procedural-invaders/' do %>
+						  <%= image_tag 'invasor-screenshot.png' %>
+					<% end %>
+					Click the image to play!
+				</div>
+			</div>
+		</div>
 
 	</div>
 	<div class="col-sm-3 col-sm-pull-7">
