@@ -2,7 +2,7 @@
 title: "Articles"
 ---
 <ul>
-	<% sub_pages('articles').each do |article| %>
+	<% sub_pages('articles/2014-').each do |article| %>
 		<% if (article.url =~ /.*html$/) %>
 			<li> <%= link_to article.data.title, article.url %> </li>
 		<% end %>
