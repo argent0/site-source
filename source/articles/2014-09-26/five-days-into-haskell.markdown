@@ -16,8 +16,8 @@ with some code from the book.
 Although I have studied some Haskell before, what makes this time different is
 that I have only coded Haskell this week. I have followed [this
 advice](http://www.haskell.org/haskellwiki/Koans) of starting with a beginner's
-mind and only think Haskell. I also want to follow the advice [John Carmack gives in his
-keynote](https://www.youtube.com/watch?v=Uooh0Y9fC_M) about writing a medium size project to ground Haskell
+mind and only think Haskell. I also want to follow the advice John Carmack gives in his
+[keynote](https://www.youtube.com/watch?v=Uooh0Y9fC_M) about writing a medium size project to ground Haskell
 and FP concepts in my mind so that I don't have to go over the tutorials
 again. I've thought about writing a pong game.
 
@@ -48,7 +48,7 @@ the Monads part yet.
 
 Working the exercises of this second book I've enjoyed (yes, joy) one about
 the [Convex Hull](http://en.wikipedia.org/wiki/Convex_hull) of a set of
-points,
+points.
 
 For the hands on experience, I've found
 [Ninety-Nine Haskell Problems](http://www.haskell.org/haskellwiki/H-99:_Ninety-Nine_Haskell_Problems)
@@ -80,7 +80,7 @@ Haskell now:
 > in terms of the input.
 
 I don't need to think about moving values back and forth with assignments. Just
-think about definitions like thouse found in algebra.
+think about definitions like those found in algebra.
 
 Finally, the last problem I've read so far, problem 54A, says:
 
