@@ -149,7 +149,7 @@ update frame = do
 
 main :: IO ()
 main = do
-   update initialGameState
+   update initialAnimationState
 
 ~~~
 
