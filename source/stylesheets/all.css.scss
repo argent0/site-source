@@ -1,6 +1,15 @@
 //$border-radius-base:        2px !default;
 //$border-radius-large:       3px !default;
 //$border-radius-small:       0px !default;
+/*Article list*/
+
+//.article-index {
+ul.article-index {
+	list-style:none;
+	padding-left: 0px;
+}
+//}
+
 @import 'variables';
 @import 'bootstrap';
 
@@ -89,3 +98,4 @@ footer {
 		margin-left: 15px; 
 	}
 };
+
