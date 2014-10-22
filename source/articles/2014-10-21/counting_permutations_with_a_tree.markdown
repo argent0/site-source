@@ -144,7 +144,7 @@ Note how the comparison `k < ok` determines where to insert the new pair (`k
 v`). This operation, as you can see, is recursive for the `Branch` pattern. But
 in only transverses half of the tree depending on the comparison `k < ok`. It
 would be interesting to see if it is possible to instantiate a proper `Functor`
-and express this a `fmap`.
+and express this with `fmap`.
 
 Now, the second detail to note is that if you are building a tree from a list
 $A=[a_i]$:
@@ -206,9 +206,9 @@ countInversions' = Data.Foldable.foldl f (Empty,0)
 
 First, all the accumulator variables have disappeared. There is still
 accumulation in the `foldl` of `countInversions'` and in the recursive
-call of the overloaded insert `insertAndCountInversions'`
-But it's no longer on the function parameters, making the accumulation more
-clear.
+call of the overloaded insert `insertAndCountInversions'`.
+The differences is that it's no longer on the function parameters, making
+the accumulation more clear.
 
 The recursion of `insertAndCountInversions'` is inserting into a BST, so the reader
 of the code may be familiar with the structure a know what to expect,
