@@ -1,6 +1,8 @@
 ---
 title: "Reporting probabilities carefully"
 categories: "update test"
+abstract: "This is actually a fair attempt, but not the real deal."
+order: 4
 ---
 
 Suppose you have an experiment with two possible outcomes. For example: "You

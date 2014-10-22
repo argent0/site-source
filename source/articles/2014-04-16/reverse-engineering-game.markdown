@@ -1,6 +1,8 @@
 ---
 title: "Reverse Engineering game"
 categories: "Web development"
+abstract: "A game about finding the underlying Schelling's segregation model."
+order: 3
 ---
 
 I wrote a Reverse Engineering game as an exercise to write better code.

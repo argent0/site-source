@@ -1,6 +1,8 @@
 ---
 title: "Fourteen days into Haskell"
 categories: "article"
+abstract: "A perspective after 14 days programming only in Haskell."
+order: 1
 ---
 
 It's now fourteen days since I've started to learn Haskell.That is approximately

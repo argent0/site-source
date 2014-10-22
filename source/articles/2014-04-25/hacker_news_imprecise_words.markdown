@@ -1,6 +1,8 @@
 ---
 title: "Imprecise Words"
 categories: "web development linguistics"
+abstract: "An experimental Google Chrome extension that highlights words that may need clarification in a popular website."
+order: 2
 ---
 
 I wrote a **Google Chrome** extension to highlight imprecise words in HN's

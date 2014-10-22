@@ -1,6 +1,8 @@
 ---
 title: "Five days into Haskell"
 categories: "article"
+abstract: "A perspective after five days prgramming only in Haskell"
+order: 1
 ---
 
 I've been learning Haskell for the five previous days.

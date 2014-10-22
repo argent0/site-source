@@ -1,6 +1,8 @@
 ---
 title: "Finding what is new in your personal journal"
 categories: "article"
+abstract: "An experimental tool that highlights new information and undesirable semantic structures in real time while writing text."
+order: 2
 ---
 
 I've keep a log of my everyday activities since 2011. The goal is to
