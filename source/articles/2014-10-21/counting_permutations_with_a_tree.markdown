@@ -127,7 +127,7 @@ To count permutations with a binary tree, it is important to note that:
 **You can insert a new (key,value) into a BST and obtain a new BST**
 
 Not surprisingly, this operation is called *insert*. For the data structure
-defined avobe this would be:
+defined above this would be:
 
 ~~~haskell
 insert :: Ord k => Tree k v -> k -> v -> Tree k v
