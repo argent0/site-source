@@ -14,7 +14,7 @@ I'm going to start with what I've been reading. The starting question has been:
 "What are monads?". I've previously read that IO is a monad. The IO monad is
 Haskell primary way to get input from the user and to display the output of a
 program. What that means to me is that at the end of your program you will have to
-make calculations inside a *monad*. (Note the metaphor *Mondas are containers*)
+make calculations inside a *monad*. (Note the metaphor *Monads are containers*)
 
 Removing the metaphor that is: pass a *monadic value* to a function and using the
 resulting, also monadic, value for the next function. 
@@ -24,7 +24,7 @@ using the right operators you can pass a monadic value to any function and make
 any value a monadic value.
 
 A monadic value has a *monadic type*, and a monadic type is an instance of the
-Monda type class.
+Monad type class.
 
 That looks like a lot of jargon to me, and I haven't tried to explain monads
 here.
