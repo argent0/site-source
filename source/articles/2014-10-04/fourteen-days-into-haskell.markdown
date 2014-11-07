@@ -19,12 +19,12 @@ make calculations inside a *monad*. (Note the metaphor *Monads are containers*)
 Removing the metaphor that is: pass a *monadic value* to a function and using the
 resulting, also monadic, value for the next function. 
 
-Originally, the function, didn't accepted monadic values not returned them. But
+Originally, the function, didn't accepted monadic values nor returned them. But
 using the right operators you can pass a monadic value to any function and make
 any value a monadic value.
 
 A monadic value has a *monadic type*, and a monadic type is an instance of the
-Monad type class.
+Monad *type class*.
 
 That looks like a lot of jargon to me, and I haven't tried to explain monads
 here.
@@ -186,52 +186,3 @@ About the name of things I've found how sometimes in mathematics or physics one
 uses only one symbol to identify an entity. There are name conventions to ease
 readability, but I think there is need for improvement in that aspect. "More
 expressive writing".
-
-<!--
-[Typeclassopedia](http://www.haskell.org/haskellwiki/Typeclassopedia)
-[Haskellforall](http://www.haskellforall.com/) by Gabriel Gonzale  
-[Introductions to advanced Haskell topics](http://www.haskellforall.com/2014/03/introductions-to-advanced-haskell-topics.html)
-[ You Could Have Invented Monads! (And Maybe You Already Have.)](http://blog.sigfpe.com/2006/08/you-could-have-invented-monads-and.html)
-by Dan Piponi 
-[What I Wish I Knew When Learning Haskell 2.1](http://dev.stephendiehl.com/hask/)
-[Haskell-Subreddit](http://www.reddit.com/r/haskell/top/?sort=top&t=all)
-[Bresenham's line algorithm](http://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm)
-* I would like to retake "Write your self a scheme..." given that I'm now more
-  familiar with monads and the language in general.
-
-? Should I write my own type classes.
-* Real world Haskell hits that writing readable code is writing ideomatic code
-  If possible don't write your own tail recursion.
-
-* Type classes Functors, Applicative, Monads, Foldable, Arrow, Semigroup,
-  Category, etc... Typeclassopedia.
-- Followed the tutorial "you could have invented monads".
-
-- Haste, little browser program.
-
-- Syntax sugar: There is an article in the Haskellwiki considering the do
-  notation harmful. I think I recommends not using it until you master the
-  cumbersome one.
-
-- Writing code: I've read about people that writes code without testing it or
-  running it.
-
-- The book of real world Haskell recommends using type definitions. Just in case
-  you don't get the type that you expect from the compiler.
-
-  It stills takes me a few iterations to get the correct type of expressions.
-  But I can note improvements.
-
-  Coding experience: emscripten, haste-lang, ghcjs. Compiling to js. FFI
-
-- Sorting the posts of reddig haskell I've found the book about what i wish i
-  knew when learning haskell.
-
-- Reading what I wish I new when learning haskell I arrived to the
-  typeclassopedia.
-
-- Tips inspecting the types
--	the :info function of ghci. (from "What i whish i knew")
-
-- Cabal: cabal sandbox
--->
